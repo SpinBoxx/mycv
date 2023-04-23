@@ -1,5 +1,6 @@
 import Image from "next/image";
 import avatar from "../../public/avatar.jpg";
+import CvBase64 from "../../public/cv.json";
 import CakeCandles from "./svg/cake-candles";
 import GithubSvg from "./svg/github";
 import LinkedinSvg from "./svg/linkedin";
@@ -41,7 +42,7 @@ export default function LeftBar() {
           </div>
           <div className="flex gap-3 pt-2">
             <div className="group w-fit rounded-lg bg-black p-3 hover:cursor-pointer hover:bg-gradient-to-r hover:from-emerald-500 hover:to-green-500">
-              <CakeCandles svgClass="h-5 fill-indigo-300 group-hover:fill-white"></CakeCandles>
+              <CakeCandles svgClass="h-5 fill-emerald-300 group-hover:fill-white"></CakeCandles>
             </div>
             <div>
               <p className="text-sm text-zinc-400">Âge</p>
@@ -50,9 +51,13 @@ export default function LeftBar() {
           </div>
         </div>
         <div className="mt-10">
-          <button className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-8 py-3 duration-300 hover:scale-105">
+          <a
+            href={CvBase64.cv}
+            download="CV_Quentin_MIMAULT.pdf"
+            className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-8 py-3 duration-300 hover:scale-105"
+          >
             Télécharger mon CV
-          </button>
+          </a>
         </div>
       </div>
     </section>

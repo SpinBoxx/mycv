@@ -75,7 +75,7 @@ export default function Test() {
       <section
         id="vantaSection"
         ref={vantaDiv}
-        className="absolute z-10 hidden h-screen w-screen flex-1  transition duration-[1200ms]"
+        className="absolute z-50 h-screen w-screen flex-1  transition duration-[1200ms]"
       >
         <div className="container z-20 mx-auto my-auto flex h-full w-full flex-col items-center justify-center px-10 py-20 md:flex-row">
           <div className="mb-16 flex flex-col items-center justify-center text-center lg:mb-0 lg:w-1/2 lg:flex-grow lg:items-center lg:pr-24 lg:text-left">
