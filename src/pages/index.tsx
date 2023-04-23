@@ -1,19 +1,16 @@
 import DoingCard from "@/components/cards/doing-card";
 import LeftBar from "@/components/left-bar";
-import CakeCandles from "@/components/svg/cake-candles";
 import GithubSvg from "@/components/svg/github";
 import LinkedinSvg from "@/components/svg/linkedin";
-import LocationDot from "@/components/svg/location-dot";
 import SquareEnvelope from "@/components/svg/square-envelope";
 import Splide from "@splidejs/splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/css";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
 import logoBPCE from "../../public/BPCE_logo_white.png";
-import avatar from "../../public/avatar.jpg";
 import logoLbp from "../../public/lbp_clair.png";
 
 export default function Test() {
@@ -63,7 +60,9 @@ export default function Test() {
 
     const rightBar = document.getElementById("rightBar");
     window.addEventListener("resize", function () {
-      rightBar!.style.height = (window.innerHeight - 200).toString() + "px";
+      if (rightBar != null) {
+        rightBar.style.height = (window.innerHeight - 200).toString() + "px";
+      }
     });
   }, []);
 
@@ -116,12 +115,12 @@ export default function Test() {
             </div>
             <div id="content" className="mt-7">
               <p className="text-md font-medium text-stone-600">
-                I'm Creative Director and UI/UX Designer from Sydney, Australia,
-                working in web development and print media. I enjoy turning
-                complex problems into simple, beautiful and intuitive designs.
-                My aim is to bring across your message and identity in the most
-                creative way. I created web design for many famous brand
-                companies.
+                I&apos;m Creative Director and UI/UX Designer from Sydney,
+                Australia, working in web development and print media. I enjoy
+                turning complex problems into simple, beautiful and intuitive
+                designs. My aim is to bring across your message and identity in
+                the most creative way. I created web design for many famous
+                brand companies.
               </p>
             </div>
             <div
@@ -160,10 +159,11 @@ export default function Test() {
               id="client-header"
               className="relative mt-10 flex w-fit items-center gap-5"
             >
-              <span className="text-4xl font-bold">J'ai travaillé pour</span>
+              <span className="text-4xl font-bold">
+                J&apos;ai travaillé pour
+              </span>
               <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
             </div>
-
             <div className="mt-7 flex gap-10 overflow-x-hidden rounded-xl bg-[rgb(28,29,28)] px-5 py-6">
               <div className="splide flex">
                 <div className="splide__track" id="splide-track">
