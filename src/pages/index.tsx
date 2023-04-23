@@ -114,7 +114,7 @@ export default function Test() {
               <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
             </div>
             <div id="content" className="mt-7">
-              <p className="text-md font-medium text-stone-600">
+              <p className="text-md font-medium text-stone-500">
                 I&apos;m Creative Director and UI/UX Designer from Sydney,
                 Australia, working in web development and print media. I enjoy
                 turning complex problems into simple, beautiful and intuitive

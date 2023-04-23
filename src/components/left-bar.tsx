@@ -20,7 +20,7 @@ export default function LeftBar() {
           ></Image>
         </div>
 
-        <div className="mt-6 w-fit rounded-md bg-[rgb(28,29,28)] px-4 py-1.5 text-center hover:cursor-pointer">
+        <div className="mt-6 w-fit rounded-md bg-[rgb(28,29,28)] px-4 py-1.5 text-center hover:cursor-default">
           <span className="text-sm font-medium text-zinc-400">
             Développeur full-stack
           </span>
@@ -51,12 +51,10 @@ export default function LeftBar() {
           </div>
         </div>
         <div className="mt-10">
-          <a
-            href={CvBase64.cv}
-            download="CV_Quentin_MIMAULT.pdf"
-            className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-8 py-3 duration-300 hover:scale-105"
-          >
-            Télécharger mon CV
+          <a href={CvBase64.cv} download="CV_Quentin_MIMAULT.pdf">
+            <button className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-8 py-3 duration-300 hover:scale-105">
+              Télécharger mon CV
+            </button>
           </a>
         </div>
       </div>
