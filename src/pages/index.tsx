@@ -167,11 +167,11 @@ export default function Test() {
             <div className="mt-7 flex gap-10 overflow-x-hidden rounded-xl bg-[rgb(28,29,28)] px-5 py-6">
               <div className="splide flex">
                 <div className="splide__track" id="splide-track">
-                  <div className="splide__list">
+                  <div className="splide__list flex items-center">
                     <Image
                       src={logoBPCE}
                       alt="BPCE-logo"
-                      className="splide__slide h-32 w-1/5 rounded-none fill-white object-contain py-1 duration-500"
+                      className="splide__slide my-auto h-24 w-1/5 rounded-none fill-white object-contain py-1 duration-500"
                     ></Image>
                     <Image
                       src={logoLbp}
