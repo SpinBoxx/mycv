@@ -34,11 +34,8 @@ export default function Test() {
 
     if (window.innerHeight >= 750) {
       const rightBar = document.getElementById("homeCvSectionRightbar");
-      rightBar?.classList.forEach((item) => {
-        if (item.startsWith("h-")) {
-          rightBar.style.height = (window.innerHeight - 200).toString() + "px";
-        }
-      });
+      if (rightBar)
+        rightBar.style.height = (window.innerHeight - 200).toString() + "px";
     }
     const rightBar = document.getElementById("homeCvSectionRightbar");
     window.addEventListener("resize", function () {
@@ -90,7 +87,7 @@ export default function Test() {
         </section>
         <section
           id="homeCvSectionRightbar"
-          className="ml-auto block h-[630px] w-[calc(100%-450px)] grow overflow-y-scroll rounded-xl bg-[#111010] px-12 py-12"
+          className="ml-auto w-[calc(100%-450px)] grow overflow-y-scroll rounded-xl bg-[#111010] px-12 py-12"
         >
           <About number={text}></About>
         </section>
