@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import AddressBook from "../svg/address-book";
 import AddressCard from "../svg/address-card";
 import HomeSvg from "../svg/home";
@@ -6,6 +7,12 @@ import MimoLogo from "../svg/mimoLogo";
 import UserGraduate from "../svg/user-graduate";
 
 export default function Navbar() {
+  // useEffect(() => {
+  //   function changeMenu(idMenu: number) {
+  //     document.getElementById("rightBar")!.innerHTML = "OK";
+  //   }
+  //   changeMenu(3);
+  // }, []);
   return (
     <section id="navbar" className="">
       <div className="flex justify-between px-20">
@@ -14,7 +21,7 @@ export default function Navbar() {
         </div>
         <div
           id="menu"
-          className="fixed right-24 top-7 z-50 flex items-center gap-5 rounded-xl bg-black px-2 py-2"
+          className="fixed right-24 top-7 z-40 flex items-center gap-5 rounded-xl bg-black px-2 py-2"
         >
           <div className="flex items-center gap-3 rounded-md bg-gray-800 px-6 py-2.5 hover-effect-blue hover:cursor-pointer">
             <HomeSvg svgClass="h-5 fill-gray-300"></HomeSvg>
