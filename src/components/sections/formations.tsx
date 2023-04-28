@@ -1,5 +1,4 @@
 import LocationDot from "../svg/location-dot";
-import SchoolSvg from "../svg/school";
 
 export default function Formations() {
   const FORMATIONS = [
@@ -33,6 +32,7 @@ export default function Formations() {
             className={`mb-10 ml-8  ${
               FORMATIONS.length - 1 === index ? "h-64" : "h-40"
             }`}
+            key={index}
           >
             <div className="absolute -left-1.5 mt-5 h-3 w-3 rounded-full border border-white bg-gray-200 "></div>
             <time className="absolute -left-9 mb-3 mt-4 -rotate-90 text-sm font-medium text-gray-200">
