@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import logoBPCE from "../../../public/BPCE_logo_white.png";
 import logoLbp from "../../../public/lbp_clair.png";
 
-export default function Experiences(props) {
+export default function Experiences() {
   useEffect(() => {
     const splide = new Splide(".splide", {
       type: "loop",
@@ -21,7 +21,6 @@ export default function Experiences(props) {
     splide.mount({ AutoScroll });
   }, []);
 
-  const svgClass = props.svgClass;
   return (
     <div className="h-auto w-full">
       <div id="about-header" className="relative flex w-fit items-center gap-5">

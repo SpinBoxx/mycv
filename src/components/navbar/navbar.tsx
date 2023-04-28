@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import AddressBook from "../svg/address-book";
 import AddressCard from "../svg/address-card";
 import HomeSvg from "../svg/home";

@@ -1,7 +1,4 @@
 import LeftBar from "@/components/left-bar";
-import GithubSvg from "@/components/svg/github";
-import LinkedinSvg from "@/components/svg/linkedin";
-import SquareEnvelope from "@/components/svg/square-envelope";
 
 import Navbar from "@/components/navbar/navbar";
 import "@splidejs/splide/css";

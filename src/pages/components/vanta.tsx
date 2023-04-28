@@ -3,7 +3,7 @@ import LinkedinSvg from "@/components/svg/linkedin";
 import SquareEnvelope from "@/components/svg/square-envelope";
 
 interface Props {
-  translateVantaSection: Function;
+  translateVantaSection: () => void;
 }
 
 export default function VantaSection({ translateVantaSection }: Props) {
