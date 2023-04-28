@@ -1,20 +1,18 @@
-import LeftBar from "@/pages/components/sections/left-bar";
-
 import Navbar from "@/components/navbar/navbar";
+import Experiences from "@/components/sections/formations";
+import LeftBar from "@/components/sections/left-bar";
+import VantaSection from "@/components/sections/vanta";
 import "@splidejs/splide/css";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
-import About from "./components/sections/about";
-import VantaSection from "./components/vanta";
+import About from "../components/sections/about";
 
 export default function Test() {
   const VANTA_DIV = useRef(null);
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
-    // handleChange(4);
-
     CELLS({
       THREE: THREE,
       el: VANTA_DIV.current,
@@ -63,8 +61,8 @@ export default function Test() {
       case 2:
         return <h1>Expérience</h1>;
       case 3:
-        return <h1>Formations</h1>;
-      case 3:
+        return <Experiences></Experiences>;
+      case 4:
         return <h1>Contact</h1>;
     }
   };

@@ -4,7 +4,7 @@ import LinkedinSvg from "@/components/svg/linkedin";
 import LocationDot from "@/components/svg/location-dot";
 import SquareEnvelope from "@/components/svg/square-envelope";
 import Image from "next/image";
-import CvBase64 from "../../../../public/cv.json";
+import CvBase64 from "../../../public/cv.json";
 
 export default function LeftBar() {
   return (
@@ -13,7 +13,7 @@ export default function LeftBar() {
         <div className="xl:h-36"></div>
         <div className="absolute -top-10 flex w-60 items-center justify-center rounded-3xl bg-blue-500 p-3">
           <Image
-            src={"/elisa.jpg"}
+            src={"/avatar.jpg"}
             width={1000}
             height={1000}
             alt="avatar"

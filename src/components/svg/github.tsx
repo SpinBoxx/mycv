@@ -1,5 +1,8 @@
-export default function GithubSvg(props) {
-  const svgClass = props.svgClass;
+interface Props {
+  svgClass: string;
+}
+
+export default function GithubSvg({ svgClass }: Props) {
   return (
     <a href="https://github.com/SpinBoxx" target="_blank">
       <svg
