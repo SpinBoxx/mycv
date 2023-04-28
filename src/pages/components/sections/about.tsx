@@ -3,8 +3,6 @@ import Splide from "@splidejs/splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import Image from "next/image";
 import { useEffect } from "react";
-import logoBPCE from "../../../public/BPCE_logo_white.png";
-import logoLbp from "../../../public/lbp_clair.png";
 
 export default function About(props) {
   const number = props.number;

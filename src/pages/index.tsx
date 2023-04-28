@@ -53,7 +53,8 @@ export default function Test() {
       document.getElementById("homeCvSection")?.classList.remove("invisible");
     }, 100);
   }, []);
-  let getSectionByCurrentMenu = () => {
+
+  const getSectionByCurrentMenu = () => {
     switch (currentMenu) {
       case 0:
         return <About></About>;
