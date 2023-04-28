@@ -1,4 +1,5 @@
 // import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import AddressBook from "../svg/address-book";
 import AddressCard from "../svg/address-card";
 import HomeSvg from "../svg/home";
@@ -6,13 +7,45 @@ import Memo from "../svg/memo";
 import MimoLogo from "../svg/mimoLogo";
 import UserGraduate from "../svg/user-graduate";
 
-export default function Navbar() {
-  // useEffect(() => {
-  //   function changeMenu(idMenu: number) {
-  //     document.getElementById("rightBar")!.innerHTML = "OK";
-  //   }
-  //   changeMenu(3);
-  // }, []);
+interface Props {
+  currentMenu: number;
+  setCurrentMenu: Dispatch<SetStateAction<number>>;
+}
+
+export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
+  const MENU_ARRAY = [
+    {
+      nom: "Accueil",
+    },
+    {
+      nom: "A propos",
+    },
+    {
+      nom: "Expériences",
+    },
+    {
+      nom: "Formations",
+    },
+    {
+      nom: "Contact",
+    },
+  ];
+
+  const setIconByMenu = (menu: string) => {
+    switch (menu) {
+      case "Accueil":
+        return <HomeSvg svgClass="h-5 fill-gray-300"></HomeSvg>;
+      case "A propos":
+        return <AddressCard svgClass="h-5 fill-gray-300"></AddressCard>;
+      case "Expérience":
+        return <Memo svgClass="h-5 fill-gray-300"></Memo>;
+      case "Formations":
+        return <UserGraduate svgClass="h-5 fill-gray-300"></UserGraduate>;
+      case "Contact":
+        return <AddressBook svgClass="h-5 fill-gray-300"></AddressBook>;
+    }
+  };
+
   return (
     <section id="navbar" className="">
       <div className="flex justify-between px-20">
@@ -23,26 +56,21 @@ export default function Navbar() {
           id="menu"
           className="fixed right-24 top-7 z-40 flex items-center gap-5 rounded-xl bg-black px-2 py-2"
         >
-          <div className="flex items-center gap-3 rounded-md bg-gray-800 px-6 py-2.5 hover-effect-blue hover:cursor-pointer">
-            <HomeSvg svgClass="h-5 fill-gray-300"></HomeSvg>
-            <span className="text-sm text-gray-300">Accueil</span>
-          </div>
-          <div className="flex items-center gap-3 rounded-md bg-gray-800 px-6 py-2.5 hover-effect-blue hover:cursor-pointer">
-            <AddressCard svgClass="h-5 fill-gray-300"></AddressCard>
-            <span className="text-sm text-gray-300">A propos</span>
-          </div>
-          <div className="flex items-center gap-3 rounded-md bg-gray-800 px-6 py-2.5 hover-effect-blue hover:cursor-pointer">
-            <Memo svgClass="h-5 fill-gray-300"></Memo>
-            <span className="text-sm text-gray-300">Expérience</span>
-          </div>
-          <div className="flex items-center gap-3 rounded-md bg-gray-800 px-6 py-2.5 hover-effect-blue hover:cursor-pointer">
-            <UserGraduate svgClass="h-5 fill-gray-300"></UserGraduate>
-            <span className="text-sm text-gray-300">Formations</span>
-          </div>
-          <div className="flex items-center gap-3 rounded-md bg-gray-800 px-6 py-2.5 hover-effect-blue hover:cursor-pointer">
-            <AddressBook svgClass="h-5 fill-gray-300"></AddressBook>
-            <span className="text-sm text-gray-300">Contact</span>
-          </div>
+          {MENU_ARRAY.map((menu, index) => {
+            return (
+              <div
+                onClick={() => setCurrentMenu(index)}
+                key={index}
+                className={`flex items-center gap-3 rounded-md ${
+                  currentMenu === index ? "bg-effect-blue" : "bg-gray-800"
+                }  px-6 py-2.5 hover-effect-blue hover:cursor-pointer`}
+              >
+                {setIconByMenu(menu.nom)}
+                <span className="text-sm text-gray-300">{menu.nom}</span>
+              </div>
+            );
+          })}
+
           <div>
             <span>Lightmode</span>
           </div>

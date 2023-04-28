@@ -10,7 +10,7 @@ export default function About(props) {
   const number = props.number;
   useEffect(() => {
     // console.log(document.getElementsByClassName(".h-auto")[0]);
-    const splide = new Splide(".splide", {
+    const SPLIDE = new Splide(".splide", {
       type: "loop",
       drag: "free",
       focus: "center",
@@ -19,7 +19,7 @@ export default function About(props) {
         speed: 0.3,
       },
     });
-    splide.mount({ AutoScroll });
+    SPLIDE.mount({ AutoScroll });
   }, []);
 
   return (
@@ -81,12 +81,16 @@ export default function About(props) {
           <div className="splide__track" id="splide-track">
             <div className="splide__list flex items-center">
               <Image
-                src={logoBPCE}
+                src="/lbp_clair.png"
+                width={"1000"}
+                height={"1000"}
                 alt="BPCE-logo"
                 className="splide__slide my-auto h-24 w-1/5 rounded-none fill-white object-contain py-1 duration-500"
               ></Image>
               <Image
-                src={logoLbp}
+                src="/BPCE_logo_white.png"
+                width={"1000"}
+                height={"1000"}
                 alt="BPCE-logo"
                 className="splide__slide h-32 w-1/4 rounded-3xl fill-white object-contain py-5 duration-500"
               ></Image>

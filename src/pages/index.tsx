@@ -1,25 +1,23 @@
-import LeftBar from "@/components/left-bar";
+import LeftBar from "@/pages/components/sections/left-bar";
 
 import Navbar from "@/components/navbar/navbar";
 import "@splidejs/splide/css";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
-import About from "./components/about";
+import About from "./components/sections/about";
 import VantaSection from "./components/vanta";
 
 export default function Test() {
-  const vantaDiv = useRef(null);
-  const [text, setText] = useState(0);
-  function handleChange(id: number) {
-    setText(id);
-  }
+  const VANTA_DIV = useRef(null);
+  const [currentMenu, setCurrentMenu] = useState(0);
+
   useEffect(() => {
-    handleChange(4);
+    // handleChange(4);
 
     CELLS({
       THREE: THREE,
-      el: vantaDiv.current,
+      el: VANTA_DIV.current,
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
@@ -31,16 +29,15 @@ export default function Test() {
       size: 5.0,
       speed: 0.5,
     });
-
+    const RIGHT_BAR = document.getElementById("homeCvSectionRightbar");
     if (window.innerHeight >= 750) {
-      const rightBar = document.getElementById("homeCvSectionRightbar");
-      if (rightBar)
-        rightBar.style.height = (window.innerHeight - 200).toString() + "px";
+      if (RIGHT_BAR)
+        RIGHT_BAR.style.height = (window.innerHeight - 200).toString() + "px";
     }
-    const rightBar = document.getElementById("homeCvSectionRightbar");
+
     window.addEventListener("resize", function () {
-      if (rightBar != null) {
-        rightBar.style.height = (window.innerHeight - 200).toString() + "px";
+      if (RIGHT_BAR != null) {
+        RIGHT_BAR.style.height = (window.innerHeight - 200).toString() + "px";
       }
     });
     setTimeout(() => {
@@ -56,6 +53,20 @@ export default function Test() {
       document.getElementById("homeCvSection")?.classList.remove("invisible");
     }, 100);
   }, []);
+  let getSectionByCurrentMenu = () => {
+    switch (currentMenu) {
+      case 0:
+        return <About></About>;
+      case 1:
+        return <h1>A propos</h1>;
+      case 2:
+        return <h1>Expérience</h1>;
+      case 3:
+        return <h1>Formations</h1>;
+      case 3:
+        return <h1>Contact</h1>;
+    }
+  };
 
   function translateY() {
     document
@@ -67,7 +78,7 @@ export default function Test() {
     <div id="home" className="h-[900px] overflow-y-hidden pb-36">
       <section
         id="homeVantaSection"
-        ref={vantaDiv}
+        ref={VANTA_DIV}
         className="absolute z-50 h-screen w-screen flex-1  transition duration-[1200ms]"
       >
         <div
@@ -80,7 +91,10 @@ export default function Test() {
 
       <section id="homeCvSection" className="invisible mt-40 gap-10 px-32">
         <section id="homeCvSectionNavbar">
-          <Navbar></Navbar>
+          <Navbar
+            currentMenu={currentMenu}
+            setCurrentMenu={setCurrentMenu}
+          ></Navbar>
         </section>
         <section id="homeCvSectionLeftbar">
           <LeftBar></LeftBar>
@@ -89,7 +103,7 @@ export default function Test() {
           id="homeCvSectionRightbar"
           className="ml-auto w-[calc(100%-450px)] grow overflow-y-scroll rounded-xl bg-[#111010] px-12 py-12"
         >
-          <About number={text}></About>
+          {getSectionByCurrentMenu()}
         </section>
       </section>
     </div>
