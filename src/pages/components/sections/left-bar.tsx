@@ -13,7 +13,7 @@ export default function LeftBar() {
         <div className="xl:h-36"></div>
         <div className="absolute -top-10 flex w-60 items-center justify-center rounded-3xl bg-blue-500 p-3">
           <Image
-            src={"/cafe_triste.jpg"}
+            src={"/elisa.jpg"}
             width={1000}
             height={1000}
             alt="avatar"
