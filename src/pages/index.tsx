@@ -1,12 +1,20 @@
 import Navbar from "@/components/navbar/navbar";
+import About from "@/components/sections/about";
 import Experiences from "@/components/sections/formations";
 import LeftBar from "@/components/sections/left-bar";
 import VantaSection from "@/components/sections/vanta";
-import "@splidejs/splide/css";
-import { useEffect, useRef, useState } from "react";
+
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
-import About from "../components/sections/about";
+
+const My3dRoom = React.lazy(() => import("@/components/spline/myroom"));
+
+// function delayForDemo(promise) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, 200);
+//   }).then(() => promise);
+// }
 
 export default function Test() {
   const VANTA_DIV = useRef(null);
@@ -55,9 +63,13 @@ export default function Test() {
   const getSectionByCurrentMenu = () => {
     switch (currentMenu) {
       case 0:
-        return <About></About>;
+        return (
+          <Suspense fallback={<div>Loading...</div>}>
+            <My3dRoom />
+          </Suspense>
+        );
       case 1:
-        return <h1>A propos</h1>;
+        return <About />;
       case 2:
         return <h1>Expérience</h1>;
       case 3:
