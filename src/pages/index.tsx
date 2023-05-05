@@ -3,38 +3,43 @@ import About from "@/components/sections/about";
 import Experiences from "@/components/sections/formations";
 import LeftBar from "@/components/sections/left-bar";
 import VantaSection from "@/components/sections/vanta";
-
+import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
 
-const My3dRoom = React.lazy(() => import("@/components/spline/myroom"));
+import My3dRoom from "@/components/spline/myroom";
+import {
+  Environment,
+  OrbitControls,
+  PerspectiveCamera,
+} from "@react-three/drei";
 
-// function delayForDemo(promise) {
-//   return new Promise((resolve) => {
-//     setTimeout(resolve, 200);
-//   }).then(() => promise);
-// }
+function delayForDemo(promise) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 200);
+  }).then(() => promise);
+}
 
 export default function Test() {
   const VANTA_DIV = useRef(null);
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
-    CELLS({
-      THREE: THREE,
-      el: VANTA_DIV.current,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      color1: 0x1b1b59,
-      color2: 0x373737,
-      size: 5.0,
-      speed: 0.5,
-    });
+    // CELLS({
+    //   THREE: THREE,
+    //   el: VANTA_DIV.current,
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.0,
+    //   minWidth: 200.0,
+    //   scale: 1.0,
+    //   color1: 0x1b1b59,
+    //   color2: 0x373737,
+    //   size: 5.0,
+    //   speed: 0.5,
+    // });
     const RIGHT_BAR = document.getElementById("homeCvSectionRightbar");
     if (window.innerHeight >= 750) {
       if (RIGHT_BAR)
@@ -62,12 +67,6 @@ export default function Test() {
 
   const getSectionByCurrentMenu = () => {
     switch (currentMenu) {
-      case 0:
-        return (
-          <Suspense fallback={<div>Loading...</div>}>
-            <My3dRoom />
-          </Suspense>
-        );
       case 1:
         return <About />;
       case 2:
@@ -87,7 +86,7 @@ export default function Test() {
 
   return (
     <div id="home" className="h-[900px] overflow-y-hidden pb-36">
-      <section
+      {/* <section
         id="homeVantaSection"
         ref={VANTA_DIV}
         className="absolute z-50 h-screen w-screen flex-1  transition duration-[1200ms]"
@@ -98,7 +97,7 @@ export default function Test() {
         >
           <VantaSection translateVantaSection={translateY} />
         </div>
-      </section>
+      </section> */}
 
       <section id="homeCvSection" className="invisible mt-40 gap-10 px-32">
         <section id="homeCvSectionNavbar">
@@ -112,8 +111,24 @@ export default function Test() {
         </section>
         <section
           id="homeCvSectionRightbar"
-          className="ml-auto w-[calc(100%-450px)] grow overflow-y-scroll rounded-xl bg-[#111010] px-12 py-12"
+          className="ml-auto w-[calc(100%-450px)] grow overflow-y-auto rounded-xl bg-[#111010] px-12 py-12"
         >
+          <div className={`${currentMenu !== 0 ? "hidden" : "inline"}`}>
+            <Canvas>
+              <Suspense fallback={null}>
+                <ambientLight intensity={1} />
+                <spotLight
+                  intensity={1.5}
+                  angle={1.3}
+                  penumbra={1}
+                  position={[9, 15, 10]}
+                  castShadow
+                />
+                <My3dRoom />
+                <OrbitControls />
+              </Suspense>
+            </Canvas>
+          </div>
           {getSectionByCurrentMenu()}
         </section>
       </section>

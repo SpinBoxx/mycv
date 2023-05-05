@@ -29,8 +29,8 @@ export default function Formations() {
       {FORMATIONS.map((formation, index) => {
         return (
           <li
-            className={`mb-10 ml-8  ${
-              FORMATIONS.length - 1 === index ? "h-64" : "h-40"
+            className={`mb-20 ml-8  ${
+              FORMATIONS.length - 1 === index ? "h-44" : "h-40"
             }`}
             key={index}
           >
@@ -57,10 +57,10 @@ export default function Formations() {
             {FORMATIONS.length - 1 === index && (
               <div>
                 {" "}
-                <time className="absolute -left-8 mb-1 -rotate-90 text-xs font-medium text-gray-200">
+                <time className="absolute -left-8 -mt-16 mb-1 -rotate-90 text-xs font-medium text-gray-200">
                   {formation.startYear}
                 </time>
-                <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 "></div>
+                <div className="absolute -left-1.5 -mt-16 h-3 w-3 rounded-full border border-white bg-gray-200 "></div>
               </div>
             )}
           </li>
