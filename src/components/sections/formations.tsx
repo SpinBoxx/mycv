@@ -1,4 +1,4 @@
-import { db } from "@/database/database";
+// import { db } from "@/database/database";
 import LocationDot from "../svg/location-dot";
 
 let contact: {
