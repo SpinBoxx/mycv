@@ -5,8 +5,7 @@ import "@splidejs/splide/css";
 import Image from "next/image";
 import { useEffect } from "react";
 
-export default function About(props) {
-  const number = props.number;
+export default function About() {
   useEffect(() => {
     const SPLIDE = new Splide(".splide", {
       type: "loop",
@@ -23,7 +22,7 @@ export default function About(props) {
   return (
     <div className="h-auto w-full">
       <div id="about-header" className="relative flex w-fit items-center gap-5">
-        <p className="text-4xl font-bold">A propos {number}</p>
+        <p className="text-4xl font-bold">A propos </p>
         <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
       </div>
       <div id="content" className="mt-7">

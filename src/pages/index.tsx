@@ -9,10 +9,13 @@ import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
 
 import My3dRoom from "@/components/spline/myroom";
+import { seed } from "@/database/seed";
 import { OrbitControls } from "@react-three/drei";
 
 export default function Test() {
   const VANTA_DIV = useRef(null);
+  seed();
+
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
