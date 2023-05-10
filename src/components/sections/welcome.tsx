@@ -13,11 +13,15 @@ export default function Welcome() {
   };
 
   useEffect(() => {
-    setIsClickedGrabThisPopUp(() => {
-      return localStorage.getItem("isClickedGrabThisPopUp") === "0"
-        ? false
-        : true;
-    });
+    setTimeout(() => {
+      setIsClickedGrabThisPopUp(() => {
+        console.log(localStorage.getItem("isClickedGrabThisPopUp"));
+
+        return localStorage.getItem("isClickedGrabThisPopUp") === "0"
+          ? false
+          : true;
+      });
+    }, 100);
   }, []);
 
   return (
