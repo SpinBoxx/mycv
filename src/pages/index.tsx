@@ -1,21 +1,31 @@
 import Navbar from "@/components/navbar/navbar";
 import About from "@/components/sections/about";
-import Experiences from "@/components/sections/formations";
+import Contact from "@/components/sections/contact";
+import Experiences from "@/components/sections/experiences";
+import Formations from "@/components/sections/formations";
 import LeftBar from "@/components/sections/left-bar";
 import VantaSection from "@/components/sections/vanta";
-import { Canvas } from "@react-three/fiber";
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import Welcome from "@/components/sections/welcome";
+import "animate.css";
+import React, {  useEffect, useRef, useState } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
 
-import My3dRoom from "@/components/spline/myroom";
-import { seed } from "@/database/seed";
-import { OrbitControls } from "@react-three/drei";
+// function handleSubmit(e) {
+//   e.preventDefault();
+//   const postData = async () => {
+//     const response = await fetch("/api/contact", {
+//       method: "POST",
+//     });
+//     return response.json();
+//   };
+//   postData().then((data) => {
+//     alert(data.message);
+//   });
+// }
 
 export default function Test() {
   const VANTA_DIV = useRef(null);
-  seed();
-
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
@@ -33,7 +43,8 @@ export default function Test() {
       size: 5.0,
       speed: 0.5,
     });
-    const RIGHT_BAR = document.getElementById("homeCvSectionRightbar");
+
+    const RIGHT_BAR = document.getElementById("homeCvSectionBodyRightbar");
     if (window.innerHeight >= 750) {
       if (RIGHT_BAR)
         RIGHT_BAR.style.height = (window.innerHeight - 200).toString() + "px";
@@ -43,6 +54,9 @@ export default function Test() {
       if (RIGHT_BAR != null) {
         RIGHT_BAR.style.height = (window.innerHeight - 200).toString() + "px";
       }
+      // if(window.innerHeight <= 800){
+
+      // }
     });
     setTimeout(() => {
       document
@@ -60,14 +74,16 @@ export default function Test() {
 
   const getSectionByCurrentMenu = () => {
     switch (currentMenu) {
+      case 0:
+        return <Welcome />;
       case 1:
         return <About />;
       case 2:
-        return <h1>Expérience</h1>;
+        return <Experiences />;
       case 3:
-        return <Experiences></Experiences>;
+        return <Formations />;
       case 4:
-        return <h1>Contact</h1>;
+        return <Contact />;
     }
   };
 
@@ -92,37 +108,23 @@ export default function Test() {
         </div>
       </section>
 
-      <section id="homeCvSection" className="invisible mt-40 gap-10 px-32">
+      <section id="homeCvSection" className="invisible gap-10 px-32">
         <section id="homeCvSectionNavbar">
           <Navbar
             currentMenu={currentMenu}
             setCurrentMenu={setCurrentMenu}
           ></Navbar>
         </section>
-        <section id="homeCvSectionLeftbar">
-          <LeftBar></LeftBar>
-        </section>
-        <section
-          id="homeCvSectionRightbar"
-          className="ml-auto w-[calc(100%-450px)] grow overflow-y-auto rounded-xl bg-[#111010] px-12 py-12"
-        >
-          <div className={`${currentMenu !== 0 ? "hidden" : "inline"}`}>
-            <Canvas>
-              <Suspense fallback={null}>
-                <ambientLight intensity={1} />
-                <spotLight
-                  intensity={1.5}
-                  angle={1.3}
-                  penumbra={1}
-                  position={[9, 15, 10]}
-                  castShadow
-                />
-                <My3dRoom />
-                <OrbitControls />
-              </Suspense>
-            </Canvas>
-          </div>
-          {getSectionByCurrentMenu()}
+        <section id="homeCvSectionBody">
+          <section id="homeCvSectionBodyLeftbar" className="">
+            <LeftBar></LeftBar>
+          </section>
+          <section
+            id="homeCvSectionBodyRightbar"
+            className="ml-auto mt-16 w-[calc(100%-450px)] grow overflow-y-auto rounded-xl bg-[#111010] px-12 py-12"
+          >
+            {getSectionByCurrentMenu()}
+          </section>
         </section>
       </section>
     </div>

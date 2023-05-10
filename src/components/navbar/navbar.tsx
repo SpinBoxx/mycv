@@ -37,7 +37,7 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
         return <HomeSvg svgClass="h-5 fill-gray-300"></HomeSvg>;
       case "A propos":
         return <AddressCard svgClass="h-5 fill-gray-300"></AddressCard>;
-      case "Expérience":
+      case "Expériences":
         return <Memo svgClass="h-5 fill-gray-300"></Memo>;
       case "Formations":
         return <UserGraduate svgClass="h-5 fill-gray-300"></UserGraduate>;
@@ -48,13 +48,13 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
 
   return (
     <section id="navbar" className="">
-      <div className="flex justify-between px-20">
-        <div className="fixed top-0">
+      <div className="relative flex flex-row justify-between">
+        <div className="">
           <MimoLogo svgClass="h-24 !fill-gray-300"></MimoLogo>
         </div>
         <div
           id="menu"
-          className="fixed right-24 top-7 z-40 flex items-center gap-5 rounded-xl bg-black px-2 py-2"
+          className="z-40 flex items-center gap-5 rounded-xl bg-black px-2 py-2"
         >
           {MENU_ARRAY.map((menu, index) => {
             return (
@@ -70,10 +70,6 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
               </div>
             );
           })}
-
-          <div>
-            <span>Lightmode</span>
-          </div>
         </div>
       </div>
     </section>

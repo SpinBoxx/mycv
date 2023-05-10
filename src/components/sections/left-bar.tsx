@@ -13,15 +13,18 @@ export default function LeftBar() {
         <div className="xl:h-36"></div>
         <div className="absolute -top-10 flex w-60 items-center justify-center rounded-3xl bg-blue-500 p-3">
           <Image
-            src={"/avatar.jpg"}
+            src={"/me.jpeg"}
             width={1000}
             height={1000}
             alt="avatar"
-            className=" w-[19rem] rotate-12 rounded-3xl duration-500 hover:rotate-0"
+            className=" rotate-12 rounded-3xl duration-500 hover:rotate-0"
           ></Image>
         </div>
 
-        <div className="mt-14 w-fit rounded-md bg-[rgb(28,29,28)] px-4 py-1.5 text-center hover:cursor-default">
+        <div className="mt-14 flex w-fit flex-col rounded-md bg-[rgb(28,29,28)] px-4 py-1.5 text-center hover:cursor-default">
+          <span className="text-sm font-medium text-zinc-400">
+            Quentin MIMAULT
+          </span>
           <span className="text-sm font-medium text-zinc-400">
             Développeur full-stack
           </span>

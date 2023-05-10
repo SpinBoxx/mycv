@@ -4,17 +4,29 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite-react/**/*.js",
   ],
   theme: {
     extend: {
+      animation: {
+        fade: "fadeIn 6s",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: (theme) => ({
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "80%": { opacity: "0.1" },
+          "100%": { opacity: "1" },
+        },
+      }),
     },
   },
   plugins: [
+    require("flowbite/plugin"),
     ({ addUtilities }) => {
       addUtilities({
         ".hover-effect-blue": {
