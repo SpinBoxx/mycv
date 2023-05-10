@@ -37,6 +37,7 @@ export default function Contact() {
           <div>
             <ButtonCustom
               name="Envoyer un message"
+              isDisabled={true}
               type="submit"
               tailwindClass="bg-[rgb(28,29,28)] px-10 py-3 rounded-full font-medium bg-white text-black duration-500 hover:scale-105"
             />
