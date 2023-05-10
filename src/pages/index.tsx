@@ -26,6 +26,7 @@ import CELLS from "vanta/dist/vanta.cells.min";
 
 export default function Test() {
   const VANTA_DIV = useRef(null);
+
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
