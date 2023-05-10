@@ -7,7 +7,7 @@ import LeftBar from "@/components/sections/left-bar";
 import VantaSection from "@/components/sections/vanta";
 import Welcome from "@/components/sections/welcome";
 import "animate.css";
-import React, {  useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three"; // Importing THREE.js
 import CELLS from "vanta/dist/vanta.cells.min";
 
@@ -29,6 +29,8 @@ export default function Test() {
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
+    localStorage.setItem("isClickedGrabThisPopUp", "0");
+
     CELLS({
       THREE: THREE,
       el: VANTA_DIV.current,
