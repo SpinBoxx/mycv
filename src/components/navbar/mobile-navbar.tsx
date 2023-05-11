@@ -50,7 +50,7 @@ export default function MobileNavbar({ currentMenu, setCurrentMenu }: Props) {
     <section id="navbar" className="">
       <div className="relative flex flex-row justify-between">
         <div className="">
-          <MimoLogo svgClass="h-24 !fill-gray-300"></MimoLogo>
+          <MimoLogo additionnalClass="h-24 !fill-gray-300"></MimoLogo>
         </div>
         <div
           id="menu"
