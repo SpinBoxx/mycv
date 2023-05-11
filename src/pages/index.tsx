@@ -4,12 +4,12 @@ import Contact from "@/components/sections/contact";
 import Experiences from "@/components/sections/experiences";
 import Formations from "@/components/sections/formations";
 import LeftBar from "@/components/sections/left-bar";
-import VantaSection from "@/components/sections/vanta";
+// import VantaSection from "@/components/sections/vanta";
 import Welcome from "@/components/sections/welcome";
 import "animate.css";
-import React, { useEffect, useRef, useState } from "react";
-import * as THREE from "three"; // Importing THREE.js
-import CELLS from "vanta/dist/vanta.cells.min";
+import React, { useEffect, useState } from "react";
+// import * as THREE from "three"; // Importing THREE.js
+// import CELLS from "vanta/dist/vanta.cells.min";
 
 // function handleSubmit(e) {
 //   e.preventDefault();
@@ -25,7 +25,7 @@ import CELLS from "vanta/dist/vanta.cells.min";
 // }
 
 export default function Test() {
-  const VANTA_DIV = useRef(null);
+  // const VANTA_DIV = useRef(null);
 
   const [currentMenu, setCurrentMenu] = useState(0);
 
@@ -90,11 +90,11 @@ export default function Test() {
     }
   };
 
-  function translateY() {
-    document
-      .getElementById("homeVantaSection")
-      ?.classList.add("-translate-y-full");
-  }
+  // function translateY() {
+  //   document
+  //     .getElementById("homeVantaSection")
+  //     ?.classList.add("-translate-y-full");
+  // }
 
   return (
     <div id="home" className="h-[900px] overflow-y-hidden pb-36">
