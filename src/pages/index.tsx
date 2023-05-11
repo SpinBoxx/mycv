@@ -32,20 +32,20 @@ export default function Test() {
   useEffect(() => {
     localStorage.setItem("isClickedGrabThisPopUp", "0");
 
-    CELLS({
-      THREE: THREE,
-      el: VANTA_DIV.current,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      color1: 0x1b1b59,
-      color2: 0x373737,
-      size: 5.0,
-      speed: 0.5,
-    });
+    // CELLS({
+    //   THREE: THREE,
+    //   el: VANTA_DIV.current,
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.0,
+    //   minWidth: 200.0,
+    //   scale: 1.0,
+    //   color1: 0x1b1b59,
+    //   color2: 0x373737,
+    //   size: 5.0,
+    //   speed: 0.5,
+    // });
 
     const RIGHT_BAR = document.getElementById("homeCvSectionBodyRightbar");
     if (window.innerHeight >= 750) {
@@ -98,7 +98,7 @@ export default function Test() {
 
   return (
     <div id="home" className="h-[900px] overflow-y-hidden pb-36">
-      <section
+      {/* <section
         id="homeVantaSection"
         ref={VANTA_DIV}
         className="absolute z-50 h-screen w-screen flex-1  transition duration-[1200ms]"
@@ -109,16 +109,19 @@ export default function Test() {
         >
           <VantaSection translateVantaSection={translateY} />
         </div>
-      </section>
+      </section> */}
 
-      <section id="homeCvSection" className="invisible gap-10 px-32">
+      <section id="homeCvSection" className="invisible">
         <section id="homeCvSectionNavbar">
           <Navbar
             currentMenu={currentMenu}
             setCurrentMenu={setCurrentMenu}
           ></Navbar>
         </section>
-        <section id="homeCvSectionBody">
+        <section
+          id="homeCvSectionBody"
+          className="flex flex-col px-5 lg:px-32 xl:flex-row"
+        >
           <section id="homeCvSectionBodyLeftbar" className="">
             <LeftBar></LeftBar>
           </section>
