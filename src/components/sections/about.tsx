@@ -47,15 +47,15 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="bg-blue h-auto w-full">
+    <section id="about" className="h-auto w-full pb-10 xl:mt-0 xl:pb-0">
       <div
         id="aboutHeader"
         className="bg relative flex w-fit items-center gap-5"
       >
-        <p className="decoration-effect-blue decoration-fr text- xl:deco text-4xl font-bold underline underline-offset-4 ">
+        <p className="text-4xl font-bold underline decoration-blue-500 underline-offset-8 xl:no-underline">
           A propos
         </p>
-        <span className="hidden xl:relative xl:top-2.5 xl:block xl:h-1 xl:w-10 xl:rounded-full xl:bg-effect-blue"></span>
+        <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <div id="aboutMe" className="mt-7">
         <p className="text-md indent-2 font-normal text-stone-300">
@@ -67,8 +67,10 @@ export default function About() {
           id="aboutIDoingHeader"
           className="relative mt-10 flex w-fit items-center gap-5"
         >
-          <span className="text-4xl font-bold">Ce que je fais</span>
-          <span className="relative top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
+          <span className="text-4xl font-bold underline decoration-blue-500 underline-offset-4 xl:no-underline">
+            Ce que je fais
+          </span>
+          <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
         </div>
         <div
           id="aboutIDoingContent"

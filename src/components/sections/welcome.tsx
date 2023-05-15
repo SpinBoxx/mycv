@@ -13,22 +13,20 @@ export default function Welcome() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsClickedGrabThisPopUp(() => {
-        console.log(localStorage.getItem("isClickedGrabThisPopUp"));
+    setIsClickedGrabThisPopUp(() => {
+      console.log(localStorage.getItem("isClickedGrabThisPopUp"));
 
-        return localStorage.getItem("isClickedGrabThisPopUp") === "0"
-          ? false
-          : true;
-      });
-    }, 100);
+      return localStorage.getItem("isClickedGrabThisPopUp") === "0"
+        ? false
+        : true;
+    });
   }, []);
 
   return (
     <section id="welcome" className="h-full w-full overflow-y-hidden">
       <div
         id="welcomeHeader"
-        className="relative flex w-fit items-center gap-5 text-4xl font-bold"
+        className="relative flex w-fit items-center gap-5 text-center text-4xl font-bold xl:text-left"
       >
         <Typed
           sentences={["Bonjour,", "Bienvenu dans mon univers ヾ(⌐■_■)ノ♪"]}
@@ -38,10 +36,10 @@ export default function Welcome() {
       </div>
       <div
         id="welcomeRoom"
-        className="relative mt-10 h-full hover:cursor-grab active:cursor-grabbing"
+        className="relative mt-10 h-80 hover:cursor-grab active:cursor-grabbing xl:h-full"
         onMouseDown={handleChangeIsClickedGrabThisPopUp}
       >
-        {!isClickedGrabThisPopUp && (
+        {isClickedGrabThisPopUp && !isClickedGrabThisPopUp && (
           <div className="absolute bottom-0 left-0 right-0 top-0 z-10 mx-auto my-auto h-fit w-fit break-words rounded-full bg-slate-900 px-5 py-1">
             <GrabThis />
           </div>

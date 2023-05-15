@@ -30,7 +30,10 @@ export default function Test() {
   const [currentMenu, setCurrentMenu] = useState(0);
 
   useEffect(() => {
-    localStorage.setItem("isClickedGrabThisPopUp", "0");
+    if (!localStorage.getItem("isClickedGrabThisPopUp")) {
+      console.log("ok");
+      localStorage.setItem("isClickedGrabThisPopUp", "0");
+    }
 
     // CELLS({
     //   THREE: THREE,
@@ -47,20 +50,6 @@ export default function Test() {
     //   speed: 0.5,
     // });
 
-    const RIGHT_BAR = document.getElementById("homeCvSectionBodyRightbar");
-    if (window.innerHeight >= 750) {
-      if (RIGHT_BAR)
-        RIGHT_BAR.style.height = (window.innerHeight - 200).toString() + "px";
-    }
-
-    window.addEventListener("resize", function () {
-      if (RIGHT_BAR != null) {
-        RIGHT_BAR.style.height = (window.innerHeight - 200).toString() + "px";
-      }
-      // if(window.innerHeight <= 800){
-
-      // }
-    });
     setTimeout(() => {
       document
         .getElementById("homeVantaSectionContent")
@@ -97,7 +86,7 @@ export default function Test() {
   // }
 
   return (
-    <div id="home" className="h-[900px] pb-14 ">
+    <div id="home" className="pb-14 xl:h-[900px]">
       {/* <section
         id="homeVantaSection"
         ref={VANTA_DIV}
@@ -120,17 +109,19 @@ export default function Test() {
         </section>
         <section
           id="homeCvSectionBody"
-          className="mt-14 flex flex-col px-5 lg:px-32 xl:flex-row"
+          className="flex flex-col px-5 lg:mt-20 lg:px-32 xl:flex-row"
         >
           <section
             id="homeCvSectionBodyLeftbar"
-            className={currentMenu == 0 ? "" : "hidden xl:block"}
+            className={currentMenu == 0 ? "mt-32 xl:mt-0" : "hidden xl:block"}
           >
             <LeftBar></LeftBar>
           </section>
           <section
             id="homeCvSectionBodyRightbar"
-            className="mx-auto mt-10 w-full rounded-xl bg-[#111010] px-5 py-12 xl:mr-0 xl:mt-0 xl:w-[calc(100%-450px)] xl:overflow-y-auto xl:px-12"
+            className={`mx-auto ${
+              currentMenu == 0 ? "mt-10" : "mt-28"
+            }  w-full rounded-xl bg-[#111010] px-5 py-5 xl:mr-0 xl:mt-0 xl:h-auto xl:max-h-[calc(100vh-200px)] xl:w-[calc(100%-450px)] xl:overflow-y-auto xl:px-12 xl:py-12`}
           >
             {getSectionByCurrentMenu()}
           </section>

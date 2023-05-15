@@ -124,7 +124,10 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
               {MENU_ARRAY.map((menu, index) => {
                 return (
                   <div
-                    onClick={() => setCurrentMenu(index)}
+                    onClick={() => {
+                      setCurrentMenu(index);
+                      setIsMobileMenuOpen(false);
+                    }}
                     key={index}
                     className={`flex items-center gap-3 rounded-md  ${
                       currentMenu === index ? "bg-effect-blue" : ""

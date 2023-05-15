@@ -30,10 +30,12 @@ export default function Experiences() {
   ];
 
   return (
-    <section id="formations" className="pb-5">
+    <section id="formations" className="h-full pb-5">
       <div id="about-header" className="relative flex w-fit items-center gap-5">
-        <p className="text-4xl font-bold">Experiences</p>
-        <span className="hidden xl:relative xl:top-2.5 xl:block xl:h-1 xl:w-10 xl:rounded-full xl:bg-effect-blue"></span>
+        <p className="text-4xl font-bold underline decoration-blue-500 underline-offset-8 xl:no-underline">
+          Experiences
+        </p>
+        <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <ol className="">
         {EXPERIENCES.map((experience, index) => {

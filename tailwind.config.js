@@ -11,11 +11,6 @@ module.exports = {
       animation: {
         fade: "fadeIn 6s",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       keyframes: (theme) => ({
         fadeIn: {
           "0%": { opacity: "0" },
@@ -36,8 +31,8 @@ module.exports = {
         ".bg-effect-blue": {
           "@apply bg-gradient-to-r from-sky-500 to-blue-500": {},
         },
-        ".docoration-effect-blue": {
-          "@apply -gradient-to-r from-sky-500 to-blue-500": {},
+        ".decoration-effect-blue": {
+          "@apply bg-gradient-to-r from-sky-500 to-blue-500": {},
         },
       });
     },
