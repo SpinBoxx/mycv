@@ -8,7 +8,10 @@ import CvBase64 from "../../../public/cv.json";
 
 export default function LeftBar() {
   return (
-    <section id="leftBar" className="fixed w-[350px] flex-none grow-0">
+    <section
+      id="leftBar"
+      className="xl:fixed xl:w-[350px] xl:flex-none xl:grow-0"
+    >
       <div className="relative flex flex-col items-center rounded-xl bg-[#111010] p-6">
         <div className="xl:h-36"></div>
         <div className="absolute -top-10 flex w-60 items-center justify-center rounded-3xl bg-blue-500 p-3">
@@ -17,7 +20,7 @@ export default function LeftBar() {
             width={1000}
             height={1000}
             alt="avatar"
-            className=" rotate-12 rounded-3xl duration-500 hover:rotate-0"
+            className=" rounded-3xl duration-500 hover:rotate-0 xl:rotate-12"
           ></Image>
         </div>
 

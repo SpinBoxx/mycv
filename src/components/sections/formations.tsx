@@ -38,7 +38,7 @@ export default function Formations() {
     <section id="formations" className="pb-5">
       <div id="about-header" className="relative flex w-fit items-center gap-5">
         <p className="text-4xl font-bold">Formations</p>
-        <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
+        <span className="hidden xl:relative xl:top-2.5 xl:block xl:h-1 xl:w-10 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <ol className="">
         {FORMATIONS.map((formation, index) => {

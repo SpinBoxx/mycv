@@ -51,10 +51,10 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
     <section id="navbar" className="">
       <div
         id="navbarDesktop"
-        className="relative hidden xl:block xl:flex-row xl:justify-between"
+        className="relative hidden lg:px-32 xl:flex xl:flex-row xl:justify-between"
       >
         <div className="px-3 py-5">
-          <MimoLogo additionnalClass="h-10 w-12 !fill-gray-300"></MimoLogo>
+          <MimoLogo additionnalClass="h-10 w-14 !fill-gray-300"></MimoLogo>
         </div>
         <div
           id="navbarDesktopMenu"
@@ -78,13 +78,13 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
       </div>
       <div
         id="navbarMobile"
-        className="sticky z-40 flex h-full w-full flex-col bg-slate-900 px-2 py-2 xl:hidden"
+        className="fixed top-0 z-40 flex h-auto w-full flex-col bg-slate-800 px-2 py-2 xl:hidden"
       >
         <div
           id="navbarMobileHeader"
           className="flex items-center justify-between"
         >
-          <div className="px-3 py-5">
+          <div className="px-3 py-2">
             <MimoLogo additionnalClass="h-10 w-12 !fill-gray-300"></MimoLogo>
           </div>
           <div onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -97,12 +97,7 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
                 stroke="currentColor"
                 aria-hidden="true"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             ) : (
               <svg
@@ -124,40 +119,24 @@ export default function Navbar({ currentMenu, setCurrentMenu }: Props) {
           </div>
         </div>
         {isMobileMenuOpen && (
-          <div id="navbarMobileBody" className="h-screen">
-            <nav className="flex flex-col" aria-label="Global">
-              <a
-                href="#"
-                className="inline-flex items-center rounded-md bg-gray-800 px-3 py-2 text-sm font-medium text-white"
-                aria-current="page"
-              >
-                {" "}
-                Dashboard{" "}
-              </a>
-
-              <a
-                href="#"
-                className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                {" "}
-                Team{" "}
-              </a>
-
-              <a
-                href="#"
-                className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                {" "}
-                Projects{" "}
-              </a>
-
-              <a
-                href="#"
-                className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                {" "}
-                Calendar{" "}
-              </a>
+          <div id="navbarMobileBody" className="mt-4 h-screen">
+            <nav className="flex flex-col gap-2" aria-label="Global">
+              {MENU_ARRAY.map((menu, index) => {
+                return (
+                  <div
+                    onClick={() => setCurrentMenu(index)}
+                    key={index}
+                    className={`flex items-center gap-3 rounded-md  ${
+                      currentMenu === index ? "bg-effect-blue" : ""
+                    }  px-6 py-2.5 hover-effect-blue hover:cursor-pointer`}
+                  >
+                    {setIconByMenu(menu.nom)}
+                    <span className="text-base font-medium text-gray-300">
+                      {menu.nom}
+                    </span>
+                  </div>
+                );
+              })}
             </nav>
           </div>
         )}

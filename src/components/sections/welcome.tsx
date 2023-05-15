@@ -25,7 +25,7 @@ export default function Welcome() {
   }, []);
 
   return (
-    <section id="welcome" className="h-full w-full">
+    <section id="welcome" className="h-full w-full overflow-y-hidden">
       <div
         id="welcomeHeader"
         className="relative flex w-fit items-center gap-5 text-4xl font-bold"

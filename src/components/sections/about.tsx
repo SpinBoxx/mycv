@@ -47,10 +47,15 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="h-auto w-full">
-      <div id="aboutHeader" className="relative flex w-fit items-center gap-5">
-        <p className="text-4xl font-bold">A propos</p>
-        <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
+    <section id="about" className="bg-blue h-auto w-full">
+      <div
+        id="aboutHeader"
+        className="bg relative flex w-fit items-center gap-5"
+      >
+        <p className="decoration-effect-blue decoration-fr text- xl:deco text-4xl font-bold underline underline-offset-4 ">
+          A propos
+        </p>
+        <span className="hidden xl:relative xl:top-2.5 xl:block xl:h-1 xl:w-10 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <div id="aboutMe" className="mt-7">
         <p className="text-md indent-2 font-normal text-stone-300">
@@ -63,7 +68,7 @@ export default function About() {
           className="relative mt-10 flex w-fit items-center gap-5"
         >
           <span className="text-4xl font-bold">Ce que je fais</span>
-          <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
+          <span className="relative top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
         </div>
         <div
           id="aboutIDoingContent"
@@ -97,7 +102,7 @@ export default function About() {
           className="relative mt-10 flex w-fit items-center gap-5"
         >
           <span className="text-4xl font-bold">J&apos;ai travaillé pour</span>
-          <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
+          {/* <span className="relative top-6 h-1 w-40 rounded-full bg-effect-blue"></span> */}
         </div>
         <div
           id="aboutMyCustomersCarroussel"

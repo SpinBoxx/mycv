@@ -12,7 +12,7 @@ export default function DoingCard(props: {
   return (
     <div
       id="card"
-      className="relative flex w-96 gap-7 rounded-xl border border-[rgb(56,58,56)] p-5 shadow-md hover:cursor-default hover:shadow-lg hover:shadow-zinc-800 xl:w-full 2xl:w-[44%]"
+      className="relative flex w-full gap-7 rounded-xl border border-[rgb(56,58,56)] p-5 shadow-md hover:cursor-default hover:shadow-lg hover:shadow-zinc-800 xl:w-full 2xl:w-[44%]"
     >
       <svg
         viewBox="0 0 40 40"

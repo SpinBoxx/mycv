@@ -97,7 +97,7 @@ export default function Test() {
   // }
 
   return (
-    <div id="home" className="h-[900px] overflow-y-hidden pb-36">
+    <div id="home" className="h-[900px] pb-14 ">
       {/* <section
         id="homeVantaSection"
         ref={VANTA_DIV}
@@ -120,14 +120,17 @@ export default function Test() {
         </section>
         <section
           id="homeCvSectionBody"
-          className="flex flex-col px-5 lg:px-32 xl:flex-row"
+          className="mt-14 flex flex-col px-5 lg:px-32 xl:flex-row"
         >
-          <section id="homeCvSectionBodyLeftbar" className="">
+          <section
+            id="homeCvSectionBodyLeftbar"
+            className={currentMenu == 0 ? "" : "hidden xl:block"}
+          >
             <LeftBar></LeftBar>
           </section>
           <section
             id="homeCvSectionBodyRightbar"
-            className="ml-auto mt-16 w-[calc(100%-450px)] grow overflow-y-auto rounded-xl bg-[#111010] px-12 py-12"
+            className="mx-auto mt-10 w-full rounded-xl bg-[#111010] px-5 py-12 xl:mr-0 xl:mt-0 xl:w-[calc(100%-450px)] xl:overflow-y-auto xl:px-12"
           >
             {getSectionByCurrentMenu()}
           </section>

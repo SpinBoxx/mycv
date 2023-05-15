@@ -10,7 +10,7 @@ export default function Contact() {
         className="relative flex w-fit items-center gap-5"
       >
         <p className="text-4xl font-bold">Contact</p>
-        <span className="absolute -right-48 top-6 h-1 w-40 rounded-full bg-effect-blue"></span>
+        <span className="hidden xl:relative xl:top-2.5 xl:block xl:h-1 xl:w-10 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <div id="contactContent" className="mt-7">
         <p className="text-md font-normal text-stone-300">

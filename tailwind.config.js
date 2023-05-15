@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/app/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite-react/**/*.js",
   ],
   theme: {
@@ -35,6 +35,9 @@ module.exports = {
         },
         ".bg-effect-blue": {
           "@apply bg-gradient-to-r from-sky-500 to-blue-500": {},
+        },
+        ".docoration-effect-blue": {
+          "@apply -gradient-to-r from-sky-500 to-blue-500": {},
         },
       });
     },
