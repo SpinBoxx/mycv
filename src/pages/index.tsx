@@ -109,7 +109,7 @@ export default function Test() {
         </section>
         <section
           id="homeCvSectionBody"
-          className="flex flex-col px-5 lg:mt-20 lg:px-32 xl:flex-row"
+          className="flex flex-col px-5 sm:mt-4 lg:px-32 xl:mt-24 xl:flex-row"
         >
           <section
             id="homeCvSectionBodyLeftbar"

@@ -41,7 +41,8 @@ module.exports = {
             {},
         },
         ".text-paragraph": {
-          "@apply text-zinc-400 tracking-normal text-base indent-2": {},
+          "@apply text-zinc-400 tracking-normal text-base indent-2 tracking-tight sm:tracking-normal":
+            {},
         },
         ".bg-effect-blue": {
           "@apply bg-gradient-to-r from-sky-500 to-blue-500": {},

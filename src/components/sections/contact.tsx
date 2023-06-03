@@ -39,7 +39,7 @@ export default function Contact() {
               name="Envoyer un message"
               isDisabled={true}
               type="submit"
-              tailwindClass="bg-[rgb(28,29,28)] px-10 py-3 rounded-full font-medium bg-white text-black duration-500 hover:scale-105"
+              tailwindClass="bg-[rgb(28,29,28)] w-full md:w-auto px-10 py-3 rounded-full font-medium bg-white text-black duration-500 hover:scale-105"
             />
           </div>
         </form>

@@ -32,7 +32,7 @@ export default function Experiences() {
     <section id="formations" className="pb-5">
       <div id="about-header" className="relative flex w-fit items-center gap-5">
         <p className="custom-underline text-h1">Experiences</p>
-        <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
+        <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <ol className="">
         {EXPERIENCES.map((experience, index) => {

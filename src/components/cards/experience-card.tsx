@@ -24,15 +24,15 @@ export default function CardExperience({
 }: Props) {
   return (
     <li
-      className={`relative mt-6 cursor-default overflow-hidden rounded-xl border border-[rgb(56,58,56)] pb-14 pl-[4.5rem] pr-10 pt-5 hover:shadow-lg hover:shadow-zinc-800 md:px-20`}
+      className={`relative mt-6 cursor-default overflow-hidden rounded-xl border border-[rgb(56,58,56)] pb-14 pl-[3.5rem] pr-5 pt-5 hover:shadow-lg hover:shadow-zinc-800 md:px-20`}
     >
       <div
         className={`${
           endYear === "" ? "hidden" : ""
-        } dot absolute left-10 z-10 mt-5 h-3 w-3 rounded-full bg-[rgb(56,58,56)]`}
+        } dot absolute left-8 z-10 mt-5 h-3 w-3 rounded-full bg-[rgb(56,58,56)] sm:left-10`}
       ></div>
-      <div className="line absolute left-[45px] mt-5 h-[calc(100%-5rem)] w-0.5 rounded-full bg-[rgb(56,58,56)]"></div>
-      <time className="absolute left-3 mb-3 mt-4 -rotate-90 text-xs font-normal text-[rgb(137,143,137)]">
+      <div className="line absolute left-[37px] mt-5 h-[calc(100%-5rem)] w-0.5 rounded-full bg-[rgb(56,58,56)] sm:left-[45px]"></div>
+      <time className="absolute left-1 mb-3 mt-4 -rotate-90 text-xs font-normal text-[rgb(137,143,137)] sm:left-3">
         {endYear}
       </time>
       <div className="flex items-center gap-3 text-2xl font-semibold text-blue-400">
@@ -68,8 +68,8 @@ export default function CardExperience({
             );
           })}
       </div>
-      <div className="dot absolute bottom-10 left-10 z-10 h-3 w-3 rounded-full bg-[rgb(56,58,56)]"></div>
-      <time className="absolute bottom-6 left-3 mb-3 mt-4 -rotate-90 text-xs font-normal text-[rgb(137,143,137)]">
+      <div className="dot absolute bottom-10 left-8 z-10 h-3 w-3 rounded-full bg-[rgb(56,58,56)] sm:left-10"></div>
+      <time className="absolute bottom-6 left-1 mb-3 mt-4 -rotate-90 text-xs font-normal text-[rgb(137,143,137)] sm:left-3">
         {startYear}
       </time>
     </li>

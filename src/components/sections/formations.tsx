@@ -44,7 +44,6 @@ export default function Formations() {
             <CardExperience
               key={index}
               title={formation.school}
-              experienceNumber={FORMATIONS.length - index}
               subtitle={formation.cursus}
               titleUrl={formation.schoolUrl}
               location={formation.location}
