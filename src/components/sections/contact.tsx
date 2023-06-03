@@ -9,13 +9,11 @@ export default function Contact() {
         id="contactHeader"
         className="relative flex w-fit items-center gap-5"
       >
-        <p className="text-4xl font-bold underline decoration-blue-500 underline-offset-8 xl:no-underline">
-          Contact
-        </p>
+        <p className="custom-underline text-h1">Contact</p>
         <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <div id="contactContent" className="mt-7">
-        <p className="text-md font-normal text-stone-300">
+        <p className="text-paragraph">
           Vous pouvez, si vous le souhaitez, remplir le formulaire ci-dessous
           pour rentrer en contact avec moi. Je vous répondrais dans des délais
           les plus rapides.

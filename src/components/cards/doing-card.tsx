@@ -1,4 +1,4 @@
-export default function DoingCard(props: {
+export default function CardDoing(props: {
   title: string;
   description: string;
   colorNumber: number;

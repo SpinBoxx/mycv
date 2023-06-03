@@ -36,7 +36,7 @@ export default function Welcome() {
       </div>
       <div
         id="welcomeRoom"
-        className="relative mt-10 h-80 hover:cursor-grab active:cursor-grabbing xl:h-full"
+        className="relative mt-10 h-80 hover:cursor-grab  active:cursor-grabbing xl:h-full"
         onMouseDown={handleChangeIsClickedGrabThisPopUp}
       >
         {isClickedGrabThisPopUp && !isClickedGrabThisPopUp && (

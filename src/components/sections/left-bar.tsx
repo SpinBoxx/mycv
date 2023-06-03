@@ -14,17 +14,17 @@ export default function LeftBar() {
     >
       <div className="relative flex flex-col items-center rounded-xl bg-[#111010] p-6">
         <div className="xl:h-36"></div>
-        <div className="absolute -top-10 flex w-60 items-center justify-center rounded-3xl bg-blue-500 p-3">
+        <div className="absolute -top-10 left-auto flex w-60 items-center justify-center rounded-3xl bg-blue-500 p-3 xl:-top-10 xl:left-auto ">
           <Image
             src={"/me.jpeg"}
             width={1000}
             height={1000}
             alt="avatar"
-            className=" rounded-3xl duration-500 hover:rotate-0 xl:rotate-12"
+            className="rounded-3xl duration-500 hover:rotate-0 xl:rotate-12"
           ></Image>
         </div>
 
-        <div className="mt-14 flex w-fit flex-col rounded-md bg-[rgb(28,29,28)] px-4 py-1.5 text-center hover:cursor-default">
+        <div className="mt-52 flex w-fit flex-col rounded-md bg-[rgb(28,29,28)] px-4 py-1.5 text-center hover:cursor-default xl:mt-14">
           <span className="text-sm font-medium text-zinc-400">
             Quentin MIMAULT
           </span>
@@ -37,12 +37,12 @@ export default function LeftBar() {
           <GithubSvg svgClass="fill-zinc-600 h-10 hover:scale-110 hover:duration-300 hover:cursor-pointer"></GithubSvg>
           <SquareEnvelope svgClass="fill-zinc-600 h-10 hover:scale-110 hover:duration-300 hover:cursor-pointer"></SquareEnvelope>
         </div>
-        <div className="mt-6 w-full space-y-2 divide-y divide-slate-700 rounded-xl bg-[rgb(28,29,28)] p-5">
+        <div className="mt-6 w-full  space-y-2 divide-y divide-slate-700 rounded-xl bg-[rgb(28,29,28)] p-5">
           <div className="flex gap-3">
             <div className="w-fit rounded-lg bg-black p-3 hover:cursor-pointer hover:bg-gradient-to-r hover:from-sky-500 hover:to-blue-500">
               <LocationDot svgClass="h-5 fill-blue-300"></LocationDot>
             </div>
-            <div>
+            <div className="">
               <p className="text-sm text-zinc-400">Emplacement</p>
               <span className="font-medium">France, Nantes, 44000</span>
             </div>

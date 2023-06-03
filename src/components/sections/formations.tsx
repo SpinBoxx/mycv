@@ -1,13 +1,12 @@
-import { Tooltip } from "flowbite-react";
-import LocationDot from "../svg/location-dot";
+import CardExperience from "../cards/experience-card";
 export default function Formations() {
   const FORMATIONS = [
     {
       school: "Ynov",
       schoolUrl: "https://www.ynov.com/campus/nantes/",
       location: "Nantes",
-      endYear: 2022,
-      startYear: 2020,
+      endYear: "2022",
+      startYear: "2020",
       cursusLabel: "Mastère",
       cursus: "Expert développeur web",
       honours: "bien",
@@ -21,14 +20,13 @@ export default function Formations() {
       schoolUrl:
         "https://formations.univ-poitiers.fr/fr/index/licence-XA/licence-XA/licence-informatique-JB1Y4088.html",
       location: "Poitiers",
-      endYear: 2020,
-      startYear: 2017,
+      endYear: "2020",
+      startYear: "2017",
       cursusLabel: "Licence",
       cursus: "Parcours mathématiques et informatique",
       honours: "passable",
       paragraphs: [
         "Mes 3 années à l'université, anciennemment appelée licence MIPC, ont été très enrichissantes, j'ai pu continuer le cursus scientifique que j'avais commencé au lycée. Lors de la première année, j'avais comme matière l'informatique, les mathématiques et la physique chimie mais ensuite j'ai pu choisir un parcours informatique/mathematiques. C'est pendant ces 2 années que j'ai pu acquérir des bases solides en algorithmie et programmation sur des langages comme C, du Ocaml ou encore du Ada.",
-        ,
         "J'ai acquis aussi, grâce à mon double parcours, des notions importantes en mathématiques comme les graphes, la combinatoire et les probabilités discrètes. Ces notions venaient complémenter ce que j'apprenais en algorithmie et m'ont permis, aujourd'hui, d'être à l'aise et de prendre en main rapidement les outils et les concepts de programmation.",
       ],
     },
@@ -37,63 +35,23 @@ export default function Formations() {
   return (
     <section id="formations" className="pb-5">
       <div id="about-header" className="relative flex w-fit items-center gap-5">
-        <p className="text-4xl font-bold underline decoration-blue-500 underline-offset-8 xl:no-underline">
-          Formations
-        </p>
+        <p className="custom-underline text-h1">Formations</p>
         <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <ol className="">
         {FORMATIONS.map((formation, index) => {
           return (
-            <li
-              className={`relative mt-6 cursor-default overflow-hidden rounded-xl border border-[rgb(56,58,56)] p-5 pl-20 hover:shadow-lg hover:shadow-zinc-800`}
+            <CardExperience
               key={index}
-            >
-              <div className="dot  absolute left-10 z-10 mt-5 h-3 w-3 rounded-full  bg-[rgb(56,58,56)]"></div>
-              <div className="line absolute left-[45px] mt-5 h-[calc(100%-5rem)] w-0.5 rounded-full bg-[rgb(56,58,56)]"></div>
-              <time className="absolute left-3 mb-3 mt-4 -rotate-90 text-xs font-normal text-[rgb(137,143,137)]">
-                {formation.endYear}
-              </time>
-              <div className="flex items-center gap-3 text-2xl font-semibold text-blue-400">
-                {formation.schoolUrl ? (
-                  <Tooltip
-                    content="Cliquer pour voir le site web"
-                    placement="top"
-                    style="light"
-                    className="absolute"
-                  >
-                    <a href={formation.schoolUrl} target="_blank">
-                      {formation.school}
-                    </a>
-                  </Tooltip>
-                ) : (
-                  formation.school
-                )}
-              </div>
-
-              <p className="mt-0.5 gap-3 text-xl text-white">
-                {formation.cursusLabel} {formation.cursus} avec mention{" "}
-                <span className="font-bold">{formation.honours}</span>
-              </p>
-              <span className="mt-1 flex items-center gap-3 text-lg font-semibold text-gray-400">
-                <LocationDot svgClass="w-4 fill-gray-400" />{" "}
-                {formation.location}
-              </span>
-              <div className="mt-5 space-y-3 indent-2 text-sm font-normal text-gray-400">
-                {formation.paragraphs &&
-                  formation.paragraphs.map((paragraph, index) => {
-                    return (
-                      <p key={index} className="">
-                        {paragraph}
-                      </p>
-                    );
-                  })}
-              </div>
-              <div className="dot absolute bottom-10 left-10 z-10 h-3 w-3 rounded-full bg-[rgb(56,58,56)]"></div>
-              <time className="absolute bottom-6 left-3 mb-3 mt-4 -rotate-90 text-xs font-normal text-[rgb(137,143,137)]">
-                {formation.startYear}
-              </time>
-            </li>
+              title={formation.school}
+              experienceNumber={FORMATIONS.length - index}
+              subtitle={formation.cursus}
+              titleUrl={formation.schoolUrl}
+              location={formation.location}
+              paragraphs={formation.paragraphs}
+              startYear={formation.startYear}
+              endYear={formation.endYear}
+            />
           );
         })}
       </ol>

@@ -40,7 +40,7 @@ export default function About() {
       focus: "center",
       perPage: 3,
       autoScroll: {
-        speed: 0.3,
+        speed: 0.5,
       },
     });
     SPLIDE.mount({ AutoScroll });
@@ -52,24 +52,18 @@ export default function About() {
         id="aboutHeader"
         className="bg relative flex w-fit items-center gap-5"
       >
-        <p className="text-4xl font-bold underline decoration-blue-500 underline-offset-8 xl:no-underline">
-          A propos
-        </p>
+        <p className="custom-underline text-h1">A propos</p>
         <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
       </div>
       <div id="aboutMe" className="mt-7">
-        <p className="text-md indent-2 font-normal text-stone-300">
-          {ME.aboutMe}
-        </p>
+        <p className="text-paragraph">{ME.aboutMe}</p>
       </div>
       <div id="aboutIDoing">
         <div
           id="aboutIDoingHeader"
           className="relative mt-10 flex w-fit items-center gap-5"
         >
-          <span className="text-4xl font-bold underline decoration-blue-500 underline-offset-4 xl:no-underline">
-            Ce que je fais
-          </span>
+          <span className="custom-underline text-h1">Ce que je fais</span>
           <span className="hidden xl:relative xl:top-1.5 xl:block xl:h-1 xl:w-20 xl:rounded-full xl:bg-effect-blue"></span>
         </div>
         <div
@@ -103,7 +97,9 @@ export default function About() {
           id="aboutMyCustomersHeader"
           className="relative mt-10 flex w-fit items-center gap-5"
         >
-          <span className="text-4xl font-bold">J&apos;ai travaillé pour</span>
+          <span className="custom-underline text-h1">
+            J&apos;ai travaillé pour
+          </span>
           {/* <span className="relative top-6 h-1 w-40 rounded-full bg-effect-blue"></span> */}
         </div>
         <div
